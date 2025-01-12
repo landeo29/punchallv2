@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>INICIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/stilos/estilo.css">
+  <link rel="stylesheet" href="assets/stilos/general.css">
+  <link rel="stylesheet" href="assets/stilos/index.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <!-- Logo -->
+    <a href="#inicio" class="logo-container">
+      <img src="assets/img/img.png" alt="Logo Punchall" class="logo">
+      <p class="logo-text">PUNCHALL</p>
+    </a>
+
+    <!-- Botón menú hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      &#9776; <!-- Ícono de hamburguesa -->
+    </button>
+
+    <!-- Menú de navegación -->
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+      <li><a href="Servicios.html">Servicios</a></li>
+      <li><a href="ResponsabilidadSocial.html">Responsabilidad Social</a></li>
+      <li><a href="OportunidaddeColaboración.html">Oportunidad de Colaboración</a></li>
+      <li>
+        <a href="Contacto.html" class="contact-link">
+          Contáctanos <i class="icon-arrow">&#10132;</i>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Selector de modo -->
+    <div class="color-mode-container">
+      <select id="colorMode" class="color-mode-select">
+        <option value="normal">Modo Normal</option>
+        <option value="deuteranopia">Deuteranopía</option>
+        <option value="protanopia">Protanopía</option>
+        <option value="tritanopia">Tritanopía</option>
+      </select>
+    </div>
+  </nav>
+</header>
+
+<!-------Seccion 1----------->
+<div class="custom-slider-section">
+  <section>
+    <ul class='slider'>
+      <li class='item' style="background-image: url('assets/img/silder1.png')">
+        <div class='content'>
+          <h2 class='title'>Innovación Tecnológica</h2>
+          <p class='description'> En PUNCHALL, hemos transformado nuestra manera de operar gracias a soluciones tecnológicas avanzadas que no solo han mejorado nuestra eficiencia, sino que también han impulsado nuestro crecimiento de manera extraordinaria. La innovación y la calidad de nuestro software son un reflejo de nuestro compromiso con la excelencia. </p>
+          <button>Read More</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('assets/img/slider2.png')">
+        <div class='content'>
+          <h2 class='title'>Experiencia Digital</h2>
+          <p class='description'> En Punchall, creamos tecnología y oportunidades. Contratamos talento diverso que aporta
+            perspectivas únicas, enriqueciendo nuestro trabajo. Cada proyecto supera expectativas y eleva los estándares de accesibilidad y calidad </p>
+          <button>Read More</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('assets/img/slider3.png')">
+        <div class='content'>
+          <h2 class='title'>El Futuro es Ahora</h2>
+          <p class='description'> Explora nuestro sitio y descubre cómo transformamos la tecnología, creando un entorno inclusivo y accesible para todos. Únete a nuestra misión de marcar la diferencia. </p>
+          <button>Read More</button>
+        </div>
+      </li>
+
+    </ul>
+    <nav class='nav'>
+      <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+      <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+    </nav>
+  </section>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!------Fin Seccion 1------------>
+
+<!-----Seccion 2-------->
+<section class="wave-slider">
+  <!-- Slide 1 -->
+  <div class="wave-slide active" aria-hidden="false">
+    <div class="wave-content">
+      <h1>Construyendo Oportunidades</h1>
+      <h2>Innovación y Accesibilidad</h2>
+      <p>
+        En Punchall, estamos dedicados a construir un futuro donde la tecnología no solo sea innovadora, sino también accesible para todos.
+        Somos un equipo apasionado de ingenieros que cree en el poder transformador de la inclusión. Nuestro enfoque se basa en proporcionar soluciones tecnológicas
+        de alta calidad, desde el desarrollo de software hasta la creación de aplicaciones móviles y páginas web, todo mientras promovemos un entorno de trabajo inclusivo.
+      </p>
+    </div>
+    <div class="wave-image">
+      <img src="assets/img/slid1%7D.png" alt="Personas colaborando con tecnología accesible" />
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="wave-slide" aria-hidden="true">
+    <div class="wave-content">
+      <h1>Inclusión y Calidad</h1>
+      <h2>Marcando la Diferencia</h2>
+      <p>
+        En Punchall, no solo desarrollamos tecnología; construimos oportunidades. Nos enorgullece contratar a personas con diversas capacidades, quienes aportan habilidades únicas
+        y perspectivas valiosas que enriquecen nuestro trabajo. Cada proyecto que emprendemos está diseñado para no solo cumplir con las expectativas de nuestros clientes,
+        sino para superar los estándares de accesibilidad y calidad.
+      </p>
+    </div>
+    <div class="wave-image">
+      <img src="assets/img/slid2.png" alt="Tecnología accesible e inclusiva en acción" />
+    </div>
+  </div>
+
+  <!-- Botones de Navegación -->
+  <div class="wave-navigation" role="tablist" aria-label="Controles del slider">
+    <button class="nav-btn active" data-index="0" aria-selected="true" aria-controls="slide-1" tabindex="0"></button>
+    <button class="nav-btn" data-index="1" aria-selected="false" aria-controls="slide-2" tabindex="-1"></button>
+  </div>
+</section>
+<!-----Fin Seccion 2-------->
+
+</body>
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/index.js"></script>
+</html>
+

@@ -1,0 +1,251 @@
+/* Barra de navegación flotante con posición dinámica */
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    background-color: #171717;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.3s ease; /* Transición para ocultar/mostrar */
+}
+
+/* Otros estilos de la barra permanecen igual */
+
+
+/* Logo */
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 15px;
+}
+
+/* Imagen del logo */
+.logo {
+    max-height: 80px;
+    width: auto;
+}
+
+/* Texto del logo */
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+/* Animaciones */
+.logo-container:hover .logo-text {
+    color: #00BF7D;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.logo-container:hover .logo {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+
+/* Enlaces de navegación */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px; /* Espaciado uniforme entre los enlaces */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Ocupa todo el espacio restante entre el logo y el selector */
+    justify-content: flex-end; /* Alinea los enlaces hacia la derecha */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px; /* Tamaño compacto */
+    font-weight: 500;
+    white-space: nowrap; /* Evita saltos de línea */
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0e6284;
+    transform: translateY(-3px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ef6705;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Botón Contáctanos */
+.nav-links .contact-link {
+    background: transparent;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links .contact-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.nav-links .contact-link i {
+    font-size: 16px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.nav-links .contact-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Selector de modo de color */
+.color-mode-container {
+    margin-left: 20px; /* Espacio entre el selector y el último enlace */
+}
+
+.color-mode-select {
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #777;
+    background: linear-gradient(to right, #ffffff, #e6f7ff);
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    width: 150px;
+    outline: none;
+}
+
+.color-mode-select:hover {
+    background: linear-gradient(to right, #e6f7ff, #b3e0ff);
+    border-color: #555;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.color-mode-select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+body.deuteranopia {
+    filter: grayscale(80%) contrast(1.2) brightness(1.1);
+}
+
+body.protanopia {
+    filter: grayscale(50%) sepia(20%) saturate(1.2) hue-rotate(-30deg);
+}
+
+body.tritanopia {
+    filter: grayscale(50%) sepia(20%) saturate(1.2) hue-rotate(90deg);
+}
+
+body.normal {
+    filter: none;
+}
+
+/* Ocultamos menú hamburguesa en pantallas grandes */
+.menu-toggle {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1100;
+}
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar botón hamburguesa */
+    }
+
+    .nav-links {
+        display: none; /* Ocultar menú inicialmente */
+        flex-direction: column; /* Cambiar a formato vertical */
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        right: 20px;
+        background-color: #0c0c0c;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        padding: 15px 0;
+        gap: 15px;
+        z-index: 999;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostrar menú al activar */
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .color-mode-container {
+        margin-top: 10px; /* Mover selector debajo del menú */
+    }
+}
+
+/* Pantallas muy pequeñas (<480px) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        max-height: 30px;
+    }
+
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .color-mode-select {
+        width: 90%; /* Ajustar el ancho del selector */
+        font-size: 14px;
+    }
+}
+
+

@@ -1,0 +1,477 @@
+/* Encapsular estilos solo dentro de .custom-slider-section */
+.custom-slider-section * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-slider-section {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.custom-slider-section section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.custom-slider-section .item {
+    width: 200px;
+    height: 300px;
+    list-style-type: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+    transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+}
+.custom-slider-section .item::after {
+    content: ''; /* Genera una capa encima */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Capa oscura semi-transparente */
+    backdrop-filter: blur(4px); /* Aplica un difuminado sutil */
+    z-index: 1; /* Coloca la capa encima de la imagen */
+    pointer-events: none; /* Permite interactuar con el contenido debajo */
+}
+
+.custom-slider-section .item:nth-child(1),
+.custom-slider-section .item:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+}
+
+.custom-slider-section .item:nth-child(3) {
+    left: 80%;
+}
+
+.custom-slider-section .item:nth-child(4) {
+    left: calc(50% + 220px);
+}
+
+.custom-slider-section .item:nth-child(5) {
+    left: calc(50% + 440px);
+}
+
+.custom-slider-section .item:nth-child(6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+.custom-slider-section .content {
+    width: min(40vw, 5000px); /* Más ancho para mejorar la distribución del texto */
+    position: absolute;
+    z-index: 2; /* Coloca el contenido por encima de la capa oscura */
+
+    top: 50%; /* Centrado verticalmente */
+    left: 8rem; /* Espaciado desde el lado izquierdo */
+    transform: translateY(-50%);
+    font-family: "Helvetica", sans-serif; /* Fuente legible y moderna */
+    color: white; /* Texto blanco */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* Sombra más sutil para legibilidad */
+    line-height: 1.8; /* Espaciado cómodo entre líneas */
+    text-align: left; /* Alinea el texto a la izquierda (no justificado) */
+    opacity: 0; /* Oculto por defecto */
+    display: none; /* No visible inicialmente */
+}
+
+.custom-slider-section .content .title {
+    font-family: "Arial Black", sans-serif; /* Fuente destacada */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-size: 4rem; /* Tamaño equilibrado para destacar sin dominar */
+    margin-bottom: 1.5rem; /* Espacio debajo del título */
+    letter-spacing: 1px; /* Espaciado entre letras para claridad */
+    color: #2c2cda; /* Azul vibrante */
+}
+
+.custom-slider-section .content .description {
+    font-family: "Roboto", sans-serif; /* Fuente moderna para lectura */
+    font-size: 1.3rem; /* Ajuste a un tamaño cómodo */
+    line-height: 1.8; /* Mejor espaciado entre líneas */
+    margin-bottom: 2rem; /* Espacio debajo de la descripción */
+    color: #f5f5f5; /* Gris claro para suavidad */
+    text-align: left; /* Alineación lineal */
+    word-wrap: break-word; /* Evita desbordamientos de texto */
+}
+
+.custom-slider-section .content button {
+    display: inline-block;
+    background-color: rgba(44, 44, 218, 0.8); /* Fondo azul con más opacidad */
+    color: white; /* Texto blanco */
+    font-family: "Roboto", sans-serif; /* Fuente moderna */
+    font-weight: bold;
+    font-size: 1rem; /* Tamaño cómodo del botón */
+    padding: 1rem 2rem; /* Más relleno para destacar el botón */
+    border: none; /* Elimina bordes adicionales */
+    border-radius: 0.5rem; /* Bordes ligeramente redondeados */
+    cursor: pointer;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    transition: all 0.3s ease-in-out; /* Transiciones suaves */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el botón */
+}
+
+.custom-slider-section .content button:hover {
+    background-color: white; /* Fondo blanco al pasar el mouse */
+    color: #2c2cda; /* Azul vibrante para el texto */
+    transform: translateY(-3px); /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.custom-slider-section .item:nth-of-type(2) .content {
+    display: block;
+    animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+@keyframes show {
+    0% {
+        filter: blur(5px);
+        transform: translateY(calc(-50% + 75px));
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.custom-slider-section .nav {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    user-select: none;
+}
+
+.custom-slider-section .nav .btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    margin: 0 0.25rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.custom-slider-section .nav .btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Adaptaciones para dispositivos medianos */
+/* Adaptaciones para dispositivos pequeños (ancho menor a 650px) */
+@media (max-width: 650px) {
+    .custom-slider-section .content {
+        width: 90%; /* Mayor flexibilidad para pantallas pequeñas */
+        left: 5%; /* Centrar horizontalmente el contenido */
+        padding: 1rem; /* Reduce el relleno */
+    }
+
+    .custom-slider-section .content .title {
+        font-size: 2rem; /* Título más pequeño */
+        margin-bottom: 0.5rem;
+    }
+
+    .custom-slider-section .content .description {
+        font-size: 0.9rem; /* Texto más pequeño pero legible */
+        line-height: 1.5; /* Espaciado entre líneas más compacto */
+    }
+
+    .custom-slider-section .content button {
+        font-size: 0.8rem; /* Botón más pequeño */
+        padding: 0.7rem 1.2rem; /* Ajusta el tamaño del botón */
+    }
+
+    .custom-slider-section .item {
+        width: 0px; /* Tarjetas más pequeñas */
+        height: 0px;
+    }
+
+    .custom-slider-section .item:nth-child(3) {
+        left: 50%; /* Centra la tercera tarjeta */
+        transform: translateX(-50%);
+    }
+
+    .custom-slider-section .item:nth-child(4),
+    .custom-slider-section .item:nth-child(5),
+    .custom-slider-section .item:nth-child(6) {
+        left: calc(50% + 120px); /* Ajuste de espaciado en dispositivos pequeños */
+    }
+}
+
+/* Adaptaciones para dispositivos medianos (entre 650px y 900px) */
+@media (max-width: 900px) {
+    .custom-slider-section .content {
+        width: 80%; /* Contenedor más ancho */
+        left: 10%;
+    }
+
+    .custom-slider-section .content .title {
+        font-size: 2.5rem;
+    }
+
+    .custom-slider-section .content .description {
+        font-size: 1rem;
+    }
+
+    .custom-slider-section .content button {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .custom-slider-section .item {
+        width: 0px;
+        height: 0px;
+    }
+
+    .custom-slider-section .item:nth-child(3) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .custom-slider-section .item:nth-child(4),
+    .custom-slider-section .item:nth-child(5),
+    .custom-slider-section .item:nth-child(6) {
+        left: calc(50% + 170px);
+    }
+}
+
+
+/*seccion 2*/
+
+.icon-x {
+    font-family: "Poppins", sans-serif; /* Fuente moderna */
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contenedor Principal */
+.wave-slider {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #e6ffe6, #ccffcc); /* Fondo gradiente sutil */
+    font-family: "Poppins", sans-serif; /* Fuente para todo el slider */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Elementos decorativos flotantes */
+.wave-slider::before, .wave-slider::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 255, 128, 0.1);
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite;
+    z-index: 0;
+}
+
+.wave-slider::before {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.wave-slider::after {
+    bottom: 10%;
+    right: 25%;
+    animation-delay: 5s;
+}
+
+/* Animación flotante */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+}
+
+/* Cada Slide */
+.wave-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease, opacity 1s ease;
+    z-index: 1;
+}
+
+.wave-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Contenido del Slide */
+.wave-content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+    padding: 0 5%;
+    text-align: left;
+}
+
+.wave-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #002f5f;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1.5px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.wave-content h1:hover {
+    transform: scale(1.1);
+    color: #80d8ff;
+}
+
+.wave-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #80d8ff;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+}
+
+.wave-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Imagen con Forma Ondulada */
+.wave-image {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+    z-index: 1;
+}
+
+.wave-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease, filter 0.5s ease;
+    filter: brightness(80%);
+}
+
+.wave-slide.active .wave-image img:hover {
+    transform: scale(1.1);
+    filter: brightness(100%);
+}
+
+/* Navegación */
+.wave-navigation {
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 3;
+}
+
+.nav-btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover {
+    transform: scale(1.2);
+    background: #80d8ff;
+}
+
+.nav-btn.active {
+    background: #0099cc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .wave-content {
+        max-width: 80%;
+        text-align: center;
+    }
+
+    .wave-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .wave-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .wave-content p {
+        font-size: 1rem;
+    }
+
+    .wave-image {
+        width: 100%;
+        clip-path: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .wave-content h1 {
+        font-size: 2rem;
+    }
+
+    .wave-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .wave-content p {
+        font-size: 0.9rem;
+    }
+
+    .wave-navigation {
+        gap: 10px;
+    }
+
+    .nav-btn {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/*Fin Seccion 2*/
