@@ -249,3 +249,258 @@ body.normal {
 }
 
 
+/* Importar una fuente moderna desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* Estilo general del footer */
+.footer__container {
+    background: linear-gradient(135deg, #e9e8e8, #b2d8cf); /* Fondo degradado */
+    color: #fff;
+    padding: 0px 0px 10px 0px;
+    font-family: 'Poppins', sans-serif; /* Nueva fuente */
+    transition: background 0.5s ease-in-out; /* Efecto suave al cambiar el fondo */
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Fondo animado: partículas y gradiente animado */
+.footer__container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2d6e7b, #d1c788, #814DE5);
+    background-size: 400% 400%; /* Gradiente animado más dinámico */
+    animation: gradientMove 10s infinite alternate; /* Gradiente cambia de color */
+    z-index: -2;
+}
+
+.footer__container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 5%, transparent 50%);
+    animation: particleMove 15s infinite ease-in-out; /* Efecto de partículas suaves */
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Logo y enlace del logo */
+.logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-link img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease; /* Escalado y brillo */
+}
+
+.logo-link img:hover {
+    transform: scale(1.2); /* Agrandar ligeramente el logo al pasar el mouse */
+    filter: drop-shadow(0px 4px 6px rgba(255, 255, 255, 0.5));
+}
+
+.paf {
+    margin-top: 30px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Efecto de sombra y color */
+}
+
+.paf:hover {
+    color: #000000; /* Cambia a dorado */
+    text-shadow: 0px 4px 6px rgba(255, 255, 255, 0.5); /* Brillo en el texto */
+}
+
+/* Contenedor principal */
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__logo img {
+    width: auto;
+    height: 100px;
+}
+
+.footer__logo p {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Links y Servicios alineados a la izquierda */
+.footer__links,
+.footer__services {
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.footer__links h4,
+.footer__services h4,
+.footer__social h4 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase; /* Todas las letras en mayúscula */
+    color: #ffd700; /* Títulos en dorado */
+}
+
+.footer__links ul,
+.footer__services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__links ul li,
+.footer__services ul li {
+    margin: 10px 0;
+}
+
+.footer__links ul li a,
+.footer__services ul li a {
+    color: #9fd3c7;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    font-size: 1rem;
+}
+
+.footer__links ul li a:hover {
+    color: #ffd700; /* Cambia a dorado */
+    transform: translateX(5px); /* Se desplaza un poco hacia la derecha */
+}
+
+/* Redes Sociales */
+.footer__social {
+    text-align: center;
+}
+
+.social__icons {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+}
+
+.social__icons a {
+    color: #9fd3c7;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.social__icons a:hover {
+    background-color: #ffd700; /* Fondo dorado */
+    color: #4e4376; /* Cambia el color del ícono */
+    transform: scale(1); /* Escalado más grande */
+}
+
+/* Pie de página */
+.footer__bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 3px solid #ffd700; /* Línea más visible y en dorado */
+    padding-top: 20px;
+    color: #9fd3c7;
+    font-size: 0.9rem;
+}
+
+/* Animación del gradiente */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Animación de partículas */
+@keyframes particleMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-30px, -30px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer__content {
+        gap: 15px;
+        padding: 10px 15px;
+    }
+    .footer__logo img {
+        height: 70px;
+    }
+    .footer__logo p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__content {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+    .footer__logo p {
+        font-size: 1rem;
+    }
+    .social__icons a {
+        font-size: 1em;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__logo img {
+        height: 60px;
+    }
+    .footer__logo p {
+        font-size: 0.9rem;
+    }
+    .footer__bottom {
+        font-size: 0.7rem;
+    }
+    .social__icons a {
+        font-size: 0.9em;
+    }
+}
