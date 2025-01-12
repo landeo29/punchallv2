@@ -41,3 +41,58 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializar el primer slide
     updateSlide(currentIndex);
 });
+
+
+//seccion
+
+const polygons = document.querySelectorAll('.polygon-container');
+
+polygons.forEach((container) => {
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let currentX = 0, currentY = 0;
+    let rotationX = 0, rotationY = 0;
+
+    container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+
+        rotationX += deltaY * 0.5;
+        rotationY += deltaX * 0.5;
+
+        container.querySelector('.polygon').style.transform = `
+            rotateX(${rotationX}deg) rotateY(${rotationY}deg)
+        `;
+
+        startX = e.clientX;
+        startY = e.clientY;
+
+        currentX = rotationX;
+        currentY = rotationY;
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+
+            const polygon = container.querySelector('.polygon');
+            polygon.style.transition = 'transform 0.8s ease';
+            polygon.style.transform = `rotateX(0deg) rotateY(0deg)`;
+
+            rotationX = 0;
+            rotationY = 0;
+
+            setTimeout(() => {
+                polygon.style.transition = '';
+            }, 800);
+        }
+    });
+});
