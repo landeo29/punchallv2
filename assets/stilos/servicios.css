@@ -1,3 +1,243 @@
+
+/*Seccion 1*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Fondo general para toda la sección */
+.contenedorservicio {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    min-height: 90vh; /* Asegura que el contenedor cubra toda la pantalla */
+    background: linear-gradient(120deg, #f6d365, #fda085); /* Fondo degradado */
+    background-size: cover; /* Asegura que el fondo cubra todo */
+    background-position: center; /* Centra el fondo */
+    color: #333; /* Color de texto general */
+}
+
+/* Estilo general del contenedor interno */
+.container1 {
+    max-width: 1170px;
+    margin-top: 100px;
+    margin: 150px;
+    padding-right: 25px;
+    padding-left: 325px;
+}
+
+/* Título "Nuestros Servicios" */
+.heading h1:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 2px;
+    background: #BABABA;
+    margin-top: 4px;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+/* Sección #our-services */
+#our-services {
+    min-height: 100vh;
+    padding-top: 15vh;
+}
+
+/* Descripción de la sección */
+#our-services .desc {
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#our-services .desc .heading h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    margin-bottom: 30px;
+    font-size: 36px; /* Tamaño del título */
+    color: #2c3e50; /* Color del título */
+}
+
+#our-services .desc .text {
+    color: #555; /* Gris oscuro */
+    font-size: 16px;
+    line-height: 1.8; /* Más espacio entre líneas */
+}
+
+/* Contenedor de servicios */
+#our-services .services {
+    width: 67%;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaciado entre elementos */
+    justify-content: center; /* Centra los servicios horizontalmente */
+    align-items: center; /* Alinea los servicios verticalmente */
+}
+
+/* Columnas de servicios */
+#our-services .services .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Elementos de servicios (rombos) */
+#our-services .services .column .service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+    transform: rotate(45deg); /* Mantén el diseño en rombo */
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    border: 2px solid #f57469; /* Borde sutil */
+}
+
+#our-services .services .column .service:hover {
+    background: #f57469;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+#our-services .services .column .service:hover .service-icon {
+    color: #fff;
+}
+
+/* Texto e íconos dentro de los servicios */
+#our-services .services .column .service .service-desc {
+    transform: rotate(-45deg);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px; /* Ajuste de tamaño */
+    font-weight: bold;
+}
+
+#our-services .services .column .service .service-desc .service-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f57469;
+    transition: color 0.3s ease;
+}
+
+/* Popup */
+#our-services .service-popup {
+    position: fixed;
+    background: linear-gradient(135deg, #f57469, #ff9671);
+    color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 350px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#our-services .service-popup.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#our-services .popup-content {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#our-services .popup-close {
+    padding: 10px 20px;
+    background: #fff;
+    color: #f57469;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#our-services .popup-close:hover {
+    background: #f57469;
+    color: #fff;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media all and (max-width: 967px) {
+    #our-services {
+        padding-top: 60px;
+    }
+
+    #our-services .desc {
+        width: 100%; /* La descripción ocupa todo el ancho */
+        float: none;
+        margin-bottom: 30px;
+    }
+
+    #our-services .services {
+        width: 100%; /* Los servicios ocupan todo el ancho */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para dispositivos pequeños */
+        gap: 20px;
+    }
+
+    #our-services .services .column {
+        flex-direction: row;
+        gap: 10px;
+        transform: rotate(0deg);
+    }
+
+    #our-services .services .column .service .service-desc {
+        transform: rotate(0deg);
+    }
+
+    #our-services .services .column .service {
+        width: 100px;
+        height: 100px; /* Tamaño más pequeño en pantallas pequeñas */
+    }
+
+    #our-services .services .column .service .service-txt {
+        font-size: 12px; /* Texto más pequeño */
+    }
+
+    #our-services .services .column .service .service-icon {
+        font-size: 20px; /* Íconos más pequeños */
+    }
+}
+
+@media all and (max-width: 600px) {
+    #our-services .services {
+        grid-template-columns: 1fr; /* Una columna para dispositivos muy pequeños */
+        gap: 15px;
+    }
+
+    #our-services .services .column .service {
+        width: 90px;
+        height: 90px;
+    }
+
+    #our-services .desc .text {
+        font-size: 14px; /* Texto más pequeño */
+    }
+
+    #our-services .desc .heading h1 {
+        font-size: 28px; /* Título más pequeño */
+    }
+}
+
+/*Fin Seccion 1*/
 /*Seccion 2*/
 .features-section {
     text-align: center;
@@ -15,6 +255,7 @@
     transform: translateY(50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 
 .features-container.visible {
     opacity: 1;

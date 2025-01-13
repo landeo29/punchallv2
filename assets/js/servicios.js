@@ -28,3 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     steps.forEach((step) => observer.observe(step));
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const services = document.querySelectorAll('#our-services .services .service');
+    const popup = document.querySelector('.service-popup');
+    const popupText = document.getElementById('popup-text');
+
+    services.forEach((service) => {
+        service.addEventListener('mouseenter', () => {
+            const info = service.getAttribute('data-info');
+            popupText.textContent = info;
+            popup.classList.remove('hidden');
+        });
+
+        service.addEventListener('mouseleave', () => {
+            popup.classList.add('hidden');
+        });
+    });
+});
