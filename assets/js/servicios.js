@@ -30,20 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const services = document.querySelectorAll('#our-services .services .service');
+function showPopup(imgSrc, info) {
     const popup = document.querySelector('.service-popup');
+    const popupImage = document.getElementById('popup-image');
     const popupText = document.getElementById('popup-text');
 
-    services.forEach((service) => {
-        service.addEventListener('mouseenter', () => {
-            const info = service.getAttribute('data-info');
-            popupText.textContent = info;
-            popup.classList.remove('hidden');
-        });
+    popupImage.src = imgSrc;
+    popupText.textContent = info;
+    popup.classList.add('active');
+}
 
-        service.addEventListener('mouseleave', () => {
-            popup.classList.add('hidden');
-        });
-    });
-});
+function hidePopup() {
+    const popup = document.querySelector('.service-popup');
+    popup.classList.remove('active');
+}
+

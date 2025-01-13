@@ -54,76 +54,72 @@
 <!---------Seccion 1-------->
 <section id="our-services" class="contenedorservicio">
   <div class="container1">
-    <div class="desc">
-      <div class="heading">
-        <h1>NUESTROS SERVICIOS</h1>
-      </div>
-      <div class="text">
-        <p>Descubre nuestras soluciones diseñadas para optimizar tu negocio y garantizar resultados excepcionales.</p>
-      </div>
+    <!-- Encabezado -->
+    <div class="heading">
+      <h1>NUESTROS SERVICIOS</h1>
+      <p class="text">
+        Descubre nuestras soluciones diseñadas para optimizar tu negocio y garantizar resultados excepcionales.
+      </p>
     </div>
+    <!-- Servicios -->
     <div class="services">
-      <div class="column">
-        <div class="service" data-info="Creamos soluciones de software a medida que se adaptan a las necesidades específicas de tu negocio, garantizando una experiencia de usuario excepcional.">
-          <div class="service-desc">
-            <i class="service-icon fas fa-laptop-code"></i>
-            <p class="service-txt">Desarrollo de Software</p>
-          </div>
-        </div>
-        <div class="service" data-info="Diseñamos aplicaciones móviles para iOS y Android que ofrecen una experiencia de usuario fluida y moderna, asegurando los más altos estándares de calidad.">
-          <div class="service-desc">
-            <i class="service-icon fas fa-mobile-alt"></i>
-            <p class="service-txt">Aplicaciones Móviles</p>
-          </div>
-        </div>
-        <div class="service" data-info="Desarrollamos sitios web atractivos, funcionales y fáciles de usar, optimizados para un rendimiento eficiente y una navegación sin complicaciones.">
-          <div class="service-desc">
-            <i class="service-icon fas fa-globe"></i>
-            <p class="service-txt">Páginas Web</p>
-          </div>
+      <!-- Primera Fila -->
+      <div class="service" onclick="showPopup('img/software.jpg', 'Creamos soluciones de software a medida que se adaptan a las necesidades específicas de tu negocio.')">
+        <div class="service-desc">
+          <i class="service-icon fas fa-laptop-code"></i>
+          <p class="service-txt">Desarrollo de Software</p>
         </div>
       </div>
-
-      <div class="column">
-        <div class="service" data-info="Ofrecemos consultoría para la administración de tus páginas web, incluyendo actualización de certificados SSL, correos electrónicos corporativos, y medidas de seguridad.">
-          <div class="service-desc">
-            <i class="service-icon fas fa-tools"></i>
-            <p class="service-txt">Consultoría Web</p>
-          </div>
-        </div>
-        <div class="service" data-info="Te ayudamos a mejorar la accesibilidad de tus plataformas digitales para que sean inclusivas y cumplan con las normativas vigentes.">
-          <div class="service-desc">
-            <i class="service-icon fas fa-universal-access"></i>
-            <p class="service-txt">Accesibilidad</p>
-          </div>
-        </div>
-        <div class="service" data-info="Ofrecemos soporte técnico continuo y mantenimiento para asegurar que tus soluciones tecnológicas funcionen sin problemas.">
-          <div class="service-desc">
-            <i class="service-icon fas fa-headset"></i>
-            <p class="service-txt">Soporte Técnico</p>
-          </div>
+      <div class="service" onclick="showPopup('img/mobile.jpg', 'Diseñamos aplicaciones móviles para iOS y Android con una experiencia de usuario moderna.')">
+        <div class="service-desc">
+          <i class="service-icon fas fa-mobile-alt"></i>
+          <p class="service-txt">Aplicaciones Móviles</p>
         </div>
       </div>
-
-      <div class="column">
-        <div class="service" data-info="Implementamos tecnologías emergentes, como inteligencia artificial y machine learning, para mantener tus soluciones a la vanguardia.">
-          <div class="service-desc">
-            <i class="service-icon fas fa-robot"></i>
-            <p class="service-txt">Innovación</p>
-          </div>
+      <div class="service" onclick="showPopup('img/web.jpg', 'Desarrollamos sitios web atractivos, funcionales y optimizados para rendimiento.')">
+        <div class="service-desc">
+          <i class="service-icon fas fa-globe"></i>
+          <p class="service-txt">Páginas Web</p>
+        </div>
+      </div>
+      <div class="service" onclick="showPopup('img/consultoria.jpg', 'Consultoría para la administración de páginas web, SSL, y medidas de seguridad.')">
+        <div class="service-desc">
+          <i class="service-icon fas fa-tools"></i>
+          <p class="service-txt">Consultoría Web</p>
+        </div>
+      </div>
+      <!-- Segunda Fila -->
+      <div class="service" onclick="showPopup('img/accesibilidad.jpg', 'Mejoramos la accesibilidad de tus plataformas digitales para que sean inclusivas.')">
+        <div class="service-desc">
+          <i class="service-icon fas fa-universal-access"></i>
+          <p class="service-txt">Accesibilidad</p>
+        </div>
+      </div>
+      <div class="service" onclick="showPopup('img/soporte.jpg', 'Soporte técnico continuo y mantenimiento para tus soluciones tecnológicas.')">
+        <div class="service-desc">
+          <i class="service-icon fas fa-headset"></i>
+          <p class="service-txt">Soporte Técnico</p>
+        </div>
+      </div>
+      <div class="service" onclick="showPopup('img/innovacion.jpg', 'Implementamos tecnologías como inteligencia artificial y machine learning.')">
+        <div class="service-desc">
+          <i class="service-icon fas fa-robot"></i>
+          <p class="service-txt">Innovación</p>
         </div>
       </div>
     </div>
-    <div class="clear-fix"></div>
-  </div>
-  <!-- Popup -->
-  <div class="service-popup hidden">
-    <div class="popup-content">
-      <p id="popup-text"></p>
+    <!-- Popup -->
+    <div class="service-popup hidden">
+      <div class="popup-content">
+        <button class="popup-close" onclick="hidePopup()">&times;</button>
+        <div class="popup-image-container">
+          <img id="popup-image" src="" alt="Service Image">
+        </div>
+        <p id="popup-text"></p>
+      </div>
     </div>
   </div>
 </section>
-
 <!---------Fin Seccion 1---------->
 
 <!------------Seccion 2---------------->
