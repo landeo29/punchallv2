@@ -30,18 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function showPopup(imgSrc, info) {
-    const popup = document.querySelector('.service-popup');
-    const popupImage = document.getElementById('popup-image');
-    const popupText = document.getElementById('popup-text');
 
-    popupImage.src = imgSrc;
-    popupText.textContent = info;
-    popup.classList.add('active');
-}
-
-function hidePopup() {
-    const popup = document.querySelector('.service-popup');
-    popup.classList.remove('active');
-}
 

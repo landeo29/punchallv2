@@ -53,74 +53,88 @@
 </header>
 
 <!---------Seccion 1-------->
-<section id="our-services" class="contenedorservicio">
-  <div class="container1">
-    <!-- Encabezado -->
-    <div class="heading">
-      <h1>NUESTROS SERVICIOS</h1>
-      <p class="text">
-        Descubre nuestras soluciones diseñadas para optimizar tu negocio y garantizar resultados excepcionales.
+<section class="cards-section">
+  <div class="container">
+    <!-- Cabecera de la sección -->
+    <header class="cards-section__header">
+      <h1 class="cards-section__title">NUESTROS SERVICIOS</h1>
+      <p class="cards-section__description">
+        En Punchall, ofrecemos una amplia gama de servicios tecnológicos diseñados para satisfacer las necesidades de tu negocio.
+        Desde el desarrollo de software hasta la gestión integral de tus plataformas digitales, estamos aquí para ayudarte a alcanzar
+        tus objetivos con soluciones innovadoras y de alta calidad.
       </p>
-    </div>
-    <!-- Servicios -->
-    <div class="services">
-      <!-- Primera Fila -->
-      <div class="service" onclick="showPopup('../assets/img/SERVICIO1,png', 'Creamos soluciones de software a medida que se adaptan a las necesidades específicas de tu negocio.')">
-        <div class="service-desc">
-          <i class="service-icon fas fa-laptop-code"></i>
-          <p class="service-txt">Desarrollo de Software</p>
+    </header>
+
+    <!-- Contenedor de tarjetas -->
+    <div class="card__container">
+      <!-- Tarjeta 1 -->
+      <article class="card__article">
+        <img src="../assets/img/servicios/services%20(1).png" alt="Vancouver Mountains" class="card__img">
+        <div class="card__data">
+          <h2 class="card__title">Desarrollo de Software Avanzado</h2>
+          <span class=" card__description">Creamos soluciones de software a medida que se adaptan a las necesidades específicas de tu negocio, garantizando una experiencia de usuario excepcional.</span>
         </div>
-      </div>
-      <div class="service" onclick="showPopup('../assets/img/SERVICIO2.png', 'Diseñamos aplicaciones móviles para iOS y Android con una experiencia de usuario moderna.')">
-        <div class="service-desc">
-          <i class="service-icon fas fa-mobile-alt"></i>
-          <p class="service-txt">Aplicaciones Móviles</p>
+      </article>
+
+      <!-- Tarjeta 2 -->
+      <article class="card__article">
+        <img src="../assets/img/servicios/services%20(2).png" alt="Poon Hill, Nepal" class="card__img">
+        <div class="card__data">
+          <h2 class="card__title" >Desarrollo de Aplicaciones Móviles</h2>
+          <span class="card__description">Diseñamos aplicaciones móviles para iOS y Android que ofrecen una experiencia de usuario fluida y moderna,
+            asegurando los más altos estándares de calidad.</span>
         </div>
-      </div>
-      <div class="service" onclick="showPopup('../assets/img/SERVICIO3,png', 'Desarrollamos sitios web atractivos, funcionales y optimizados para rendimiento.')">
-        <div class="service-desc">
-          <i class="service-icon fas fa-globe"></i>
-          <p class="service-txt">Páginas Web</p>
+      </article>
+
+      <!-- Tarjeta 3 -->
+      <article class="card__article">
+        <img src="../assets/img/servicios/services%20(3).png" alt="Bojcin Forest, Serbia" class="card__img">
+        <div class="card__data">
+          <h2 class="card__title" >Creación de Páginas Web</h2>
+          <span class="card__description">Desarrollamos sitios web atractivos, funcionales y fáciles de usar, optimizados para un rendimiento eficiente y una navegación sin complicaciones.</span>
         </div>
-      </div>
-      <div class="service" onclick="showPopup('../assets/img/SERVICIO4,png', 'Consultoría para la administración de páginas web, SSL, y medidas de seguridad.')">
-        <div class="service-desc">
-          <i class="service-icon fas fa-tools"></i>
-          <p class="service-txt">Consultoría Web</p>
+      </article>
+
+      <!-- Tarjeta 4 -->
+      <article class="card__article">
+        <img src="../assets/img/servicios/services%20(4).png" alt="Aurora Borealis" class="card__img">
+        <div class="card__data">
+          <h2 class="card__title" >Consultoría en Administración de Páginas Web</h2>
+          <span class="card__description">Ofrecemos consultoría para la administración de tus páginas web, incluyendo actualización de certificados SSL, correos electrónicos corporativos, y medidas de seguridad.</span>
         </div>
-      </div>
-      <!-- Segunda Fila -->
-      <div class="service" onclick="showPopup('../assets/img/SERVICIO5,png', 'Mejoramos la accesibilidad de tus plataformas digitales para que sean inclusivas.')">
-        <div class="service-desc">
-          <i class="service-icon fas fa-universal-access"></i>
-          <p class="service-txt">Accesibilidad</p>
+      </article>
+
+      <!-- Tarjeta 5 -->
+      <article class="card__article">
+        <img src="../assets/img/servicios/services%20(5).png" alt="Sahara Desert" class="card__img">
+        <div class="card__data">
+          <h2 class="card__title" >Consultoría en Accesibilidad</h2>
+          <span class="card__description">Te ayudamos a mejorar la accesibilidad de tus plataformas digitales para que sean inclusivas y cumplan con las normativas vigentes.</span>
         </div>
-      </div>
-      <div class="service" onclick="showPopup('../assets/img/SERVICIO6,png', 'Soporte técnico continuo y mantenimiento para tus soluciones tecnológicas.')">
-        <div class="service-desc">
-          <i class="service-icon fas fa-headset"></i>
-          <p class="service-txt">Soporte Técnico</p>
+      </article>
+
+      <!-- Tarjeta 6 -->
+      <article class="card__article">
+        <img src="../assets/img/servicios/services%20(6).png" alt="Amazon Rainforest" class="card__img">
+        <div class="card__data">
+          <h2 class="card__title" >Soporte y Mantenimiento</h2>
+          <span class="card__description">Ofrecemos soporte técnico continuo y mantenimiento para asegurar que tus soluciones tecnológicas funcionen sin problemas.</span>
         </div>
-      </div>
-      <div class="service" onclick="showPopup('img/innovacion.jpg', 'Implementamos tecnologías como inteligencia artificial y machine learning.')">
-        <div class="service-desc">
-          <i class="service-icon fas fa-robot"></i>
-          <p class="service-txt">Innovación</p>
+      </article>
+
+      <!-- Tarjeta 7 -->
+      <article class="card__article">
+        <img src="../assets/img/servicios/services%20(7).png" alt="Grand Canyon" class="card__img">
+        <div class="card__data">
+          <h2 class="card__title" >Innovación y Desarrollo Tecnológico</h2>
+          <span class="card__description">Implementamos tecnologías emergentes, como inteligencia artificial y machine learning, para mantener tus soluciones a la vanguardia..</span>
         </div>
-      </div>
-    </div>
-    <!-- Popup -->
-    <div class="service-popup hidden">
-      <div class="popup-content">
-        <button class="popup-close" onclick="hidePopup()">&times;</button>
-        <div class="popup-image-container">
-          <img id="popup-image" src="" alt="Service Image">
-        </div>
-        <p id="popup-text"></p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
+
+
 <!---------Fin Seccion 1---------->
 
 <!------------Seccion 2---------------->
@@ -180,7 +194,7 @@
         <h2>Cómo Funciona</h2>
         <p>Descubre el proceso paso a paso para aprovechar al máximo nuestros servicios.</p>
       </div>
-      <img src="../assets/img/proces.png"class= "process-image">
+      <img src="../assets/img/servicios/proces.png" class= "process-image">
     </div>
     <div class="process-steps">
       <div class="step">
