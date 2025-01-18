@@ -26,9 +26,11 @@
 
 /* Logo */
 /* Contenedor del logo */
+/* Contenedor del logo */
 .logo-container {
     display: flex;
     align-items: center;
+    justify-content: center; /* Asegura que el logo esté centrado */
     text-decoration: none;
     color: white;
     gap: 15px;
@@ -36,9 +38,17 @@
 
 /* Imagen del logo */
 .logo {
-    max-height: 80px;
-    width: auto;
+    height: 80px; /* Incrementa el tamaño */
+    width: auto; /* Conserva la proporción natural */
+    max-width: none; /* Elimina cualquier límite */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease; /* Añade un efecto suave */
 }
+
+/* Efecto hover */
+.logo:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el cursor */
+}
+
 
 /* Texto del logo */
 .logo-text {
@@ -236,7 +246,7 @@ body.normal {
     }
 
     .logo {
-        max-height: 30px;
+        max-height: 60px;
     }
 
     .logo-text {
@@ -309,10 +319,13 @@ body.normal {
 
 .logo-link img {
     display: block;
-    max-width: 100%;
+    width: 300px; /* Cambia este valor para ajustar el tamaño */
+    height: auto; /* Conserva la proporción */
     margin: 0 auto;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease; /* Escalado y brillo */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease;
 }
+
+
 
 .logo-link img:hover {
     transform: scale(1.2); /* Agrandar ligeramente el logo al pasar el mouse */
@@ -356,7 +369,7 @@ body.normal {
 
 .footer__logo img {
     width: auto;
-    height: 100px;
+    height: 250px;
 }
 
 .footer__logo p {
@@ -473,7 +486,7 @@ body.normal {
         padding: 10px 15px;
     }
     .footer__logo img {
-        height: 70px;
+        height: 190px;
     }
     .footer__logo p {
         font-size: 1.1rem;
@@ -497,7 +510,7 @@ body.normal {
 
 @media (max-width: 480px) {
     .footer__logo img {
-        height: 60px;
+        height: 190px;
     }
     .footer__logo p {
         font-size: 0.9rem;
